@@ -78,6 +78,8 @@ resource "cloudfoundry_route" "route" {
   domain   = data.cloudfoundry_domain.domain.id
   space    = cloudfoundry_space.space.id
   hostname = "prometheus-${random_id.id.hex}"
+
+  depends_on = [cloudfoundry_space_users.users]
 }
 
 resource "local_file" "nginx_conf" {
