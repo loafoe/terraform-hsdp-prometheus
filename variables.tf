@@ -33,5 +33,10 @@ variable "private_key" {
 
 variable "org_name" {
   description = "Cloudfoundry ORG to use for reverse proxy"
-  type = string
+  type        = string
+}
+
+variable "app_domain" {
+  description = "The app domain to use"
+  type        = string
 }
