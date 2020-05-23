@@ -25,8 +25,8 @@ module "prometheus" {
 | Name | Version |
 |------|---------|
 | archive | n/a |
-| cloudfoundry | n/a |
-| hsdp | n/a |
+| cloudfoundry | https://github.com/cloudfoundry-community/terraform-provider-cf |
+| hsdp | https://github.com/philips-software/terraform-provider-hsdp |
 | local | n/a |
 | random | n/a |
 
