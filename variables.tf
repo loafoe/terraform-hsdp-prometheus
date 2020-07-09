@@ -27,12 +27,12 @@ variable "bastion_host" {
 }
 
 variable "private_key" {
-  description = "Private key for SSH access"
+  description = "Private key for SSH access (should not have a passphrase)"
   type        = string
 }
 
 variable "org_name" {
-  description = "Cloudfoundry ORG to use for reverse proxy"
+  description = "Cloudfoundry ORG name to use for reverse proxy"
   type        = string
 }
 

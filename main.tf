@@ -9,7 +9,7 @@ resource "hsdp_container_host" "prometheus" {
   instance_type = var.instance_type
 
   user_groups     = var.user_groups
-  security_groups = ["analytics", "tcp-8080"]
+  security_groups = ["analytics"]
 
   connection {
     bastion_host = var.bastion_host
@@ -22,7 +22,7 @@ resource "hsdp_container_host" "prometheus" {
   provisioner "remote-exec" {
     inline = [
       "docker volume create prometheus",
-      "docker run -d -v prometheus:/prometheus -p8080:9090 bitnami/prometheus:latest"
+      "docker run -d --restart always -v prometheus:/prometheus -p8080:9090 bitnami/prometheus:latest"
     ]
   }
 }
