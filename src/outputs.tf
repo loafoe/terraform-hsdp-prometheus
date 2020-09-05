@@ -7,3 +7,8 @@ output "prometheus_id" {
   description = "Server ID of prometheus"
   value       = random_id.id.hex
 }
+
+output "prometheus_url" {
+  description = "The cloud foundry URL of prometheus"
+  value       = cloudfoundry_route.route.endpoint
+}
