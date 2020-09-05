@@ -22,7 +22,7 @@ resource "hsdp_container_host" "prometheus" {
   provisioner "remote-exec" {
     inline = [
       "docker volume create prometheus",
-      "docker run -d --restart always -v prometheus:/prometheus -p8080:9090 ${var.prometheus_image}"
+      "docker run -d --restart always -v prometheus:/prometheus -p9200:9090 ${var.prometheus_image}"
     ]
   }
 }
@@ -104,7 +104,7 @@ http {
   resolver 169.254.0.2;
 
   upstream prometheus {
-    server ${hsdp_container_host.prometheus.private_ip}:8080;
+    server ${hsdp_container_host.prometheus.private_ip}:9200;
   }
 
   server {
