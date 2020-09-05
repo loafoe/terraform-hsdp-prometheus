@@ -40,3 +40,9 @@ variable "app_domain" {
   description = "The app domain to use"
   type        = string
 }
+
+variable "prometheus_image" {
+  description = "The docker image to use"
+  type        = string
+  default     = "bitnami/prometheus:latest"
+}

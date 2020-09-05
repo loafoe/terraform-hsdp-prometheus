@@ -22,7 +22,7 @@ resource "hsdp_container_host" "prometheus" {
   provisioner "remote-exec" {
     inline = [
       "docker volume create prometheus",
-      "docker run -d --restart always -v prometheus:/prometheus -p8080:9090 bitnami/prometheus:latest"
+      "docker run -d --restart always -v prometheus:/prometheus -p8080:9090 ${var.prometheus_image}"
     ]
   }
 }
