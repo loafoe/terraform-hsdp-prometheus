@@ -39,7 +39,8 @@ data "cloudfoundry_org" "org" {
 }
 
 data "cloudfoundry_user" "user" {
-  name = var.user
+  name   = var.user
+  org_id = data.cloudfoundry_org.org.id
 }
 
 resource "cloudfoundry_space" "space" {
