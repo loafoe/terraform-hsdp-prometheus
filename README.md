@@ -9,7 +9,7 @@ from your Cloud foundry resources
 
 ```hcl
 module "prometheus" {
-  source = "github.com/philips-labs/terraform-hsdp-prometheus"
+  source = "github.com/philips-labs/terraform-hsdp-prometheus//src"
 
   bastion_host = var.bastion_host
   user         = var.cf_user
